@@ -414,6 +414,17 @@ void sk_canvas_draw_picture(sk_canvas_t* ccanvas, const sk_picture_t* cpicture,
     AsCanvas(ccanvas)->drawPicture(AsPicture(cpicture), matrixPtr, AsPaint(cpaint));
 }
 
+void sk_canvas_draw_text(
+  sk_canvas_t* ccanvas,
+  const char *cmsg,
+  const sk_point_t* cpoint,
+  const sk_paint_t* cpaint) {
+  SkScalar x = cpoint->x;
+  SkScalar y = cpoint->y;
+  const void *p = cmsg;
+  AsCanvas(ccanvas)->drawText(p, strlen(cmsg), x, y, *AsPaint(cpaint));
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 sk_surface_t* sk_surface_new_raster(const sk_imageinfo_t* cinfo,

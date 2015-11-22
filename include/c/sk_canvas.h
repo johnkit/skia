@@ -149,6 +149,9 @@ SK_API void sk_canvas_draw_image_rect(sk_canvas_t*, const sk_image_t*,
 SK_API void sk_canvas_draw_picture(sk_canvas_t*, const sk_picture_t*,
                                    const sk_matrix_t*, const sk_paint_t*);
 
+SK_API void sk_canvas_draw_text(sk_canvas_t*, const char *,
+                                const sk_point_t*, const sk_paint_t*);
+
 SK_C_PLUS_PLUS_END_GUARD
 
 #endif

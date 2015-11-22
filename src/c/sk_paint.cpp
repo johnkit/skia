@@ -168,3 +168,9 @@ void sk_paint_set_xfermode_mode(sk_paint_t* paint, sk_xfermode_mode_t mode) {
     }
     AsPaint(paint)->setXfermodeMode(skmode);
 }
+
+void sk_paint_set_textsize(sk_paint_t* cpaint, int ctextsize)
+{
+  SkScalar textSize = ctextsize;
+  AsPaint(cpaint)->setTextSize(textSize);
+}

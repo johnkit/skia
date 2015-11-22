@@ -140,6 +140,11 @@ SK_API void sk_paint_set_maskfilter(sk_paint_t*, sk_maskfilter_t*);
  */
 SK_API void sk_paint_set_xfermode_mode(sk_paint_t*, sk_xfermode_mode_t);
 
+/**
+ * Set the paint's text size to the specified parameter.
+ */
+SK_API void sk_paint_set_textsize(sk_paint_t*, int);
+
 SK_C_PLUS_PLUS_END_GUARD
 
 #endif
