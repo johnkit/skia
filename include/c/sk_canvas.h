@@ -92,6 +92,11 @@ SK_API void sk_canvas_clip_rect(sk_canvas_t*, const sk_rect_t*);
 SK_API void sk_canvas_clip_path(sk_canvas_t*, const sk_path_t*);
 
 /**
+    Clear the entire canvas with the specified color
+*/
+SK_API void sk_canvas_clear(sk_canvas_t*, const sk_color_t);
+
+/**
     Fill the entire canvas (restricted to the current clip) with the
     specified paint.
 */

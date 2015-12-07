@@ -66,6 +66,12 @@ typedef enum {
     BGR_V_SK_PIXELGEOMETRY,
 } sk_pixelgeometry_t;
 
+typedef enum {
+    LEFT_SK_ALIGN,
+    CENTER_SK_ALIGN,
+    RIGHT_SK_ALIGN
+} sk_align_t;
+
 /**
     Return the default sk_colortype_t; this is operating-system dependent.
 */

@@ -79,8 +79,15 @@ int main(int, char**) {
     // Draw to the surface via its SkCanvas.
     SkCanvas* canvas = surface->getCanvas();   // We don't manage this pointer's lifetime.
     static const char* msg = "Hello world!";
-    canvas->clear(SK_ColorWHITE);
+    canvas->clear(SK_ColorGRAY);
     canvas->drawText(msg, strlen(msg), 90,120, paint);
+
+    // Smaller text
+    paint.setShader(NULL);
+    paint.setTextSize(12);
+    paint.setColor(SK_ColorYELLOW);
+    static const char *numbers = "0123456789";
+    canvas->drawText(numbers, strlen(numbers), 90, 150, paint);
 
     // Grab a snapshot of the surface as an immutable SkImage.
     std::shared_ptr<SkImage> image = adopt(surface->newImageSnapshot());

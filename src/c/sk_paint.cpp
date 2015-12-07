@@ -30,6 +30,15 @@ const struct {
     { BEVEL_SK_STROKE_JOIN, SkPaint::kBevel_Join },
 };
 
+const struct {
+    sk_align_t fC;
+    SkPaint::Align    fSK;
+} MAKE_FROM_TO_NAME(sk_align_t)[] = {
+    { LEFT_SK_ALIGN, SkPaint::kLeft_Align },
+    { CENTER_SK_ALIGN, SkPaint::kCenter_Align },
+    { RIGHT_SK_ALIGN, SkPaint::kRight_Align },
+};
+
 #define CType           sk_stroke_cap_t
 #define SKType          SkPaint::Cap
 #define CTypeSkTypeMap  MAKE_FROM_TO_NAME(sk_stroke_cap_t)
@@ -40,6 +49,10 @@ const struct {
 #define CTypeSkTypeMap  MAKE_FROM_TO_NAME(sk_stroke_join_t)
 #include "sk_c_from_to.h"
 
+#define CType           sk_align_t
+#define SKType          SkPaint::Align
+#define CTypeSkTypeMap  MAKE_FROM_TO_NAME(sk_align_t)
+#include "sk_c_from_to.h"
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 sk_paint_t* sk_paint_new() { return (sk_paint_t*)new SkPaint; }
@@ -173,4 +186,14 @@ void sk_paint_set_textsize(sk_paint_t* cpaint, int ctextsize)
 {
   SkScalar textSize = ctextsize;
   AsPaint(cpaint)->setTextSize(textSize);
+}
+
+void sk_paint_set_textalign(sk_paint_t* cpaint, sk_align_t calign)
+{
+  SkPaint::Align skalign;
+  if (find_sk(calign, &skalign)) {
+    AsPaint(cpaint)->setTextAlign(skalign);
+  } else {
+      // unknown ccalign
+  }
 }

@@ -145,6 +145,11 @@ SK_API void sk_paint_set_xfermode_mode(sk_paint_t*, sk_xfermode_mode_t);
  */
 SK_API void sk_paint_set_textsize(sk_paint_t*, int);
 
+/**
+ * Set the paint's text alignment to the specified parameter.
+ */
+SK_API void sk_paint_set_textalign(sk_paint_t*, sk_align_t);
+
 SK_C_PLUS_PLUS_END_GUARD
 
 #endif

@@ -367,6 +367,10 @@ void sk_canvas_clip_path(sk_canvas_t* ccanvas, const sk_path_t* cpath) {
     AsCanvas(ccanvas)->clipPath(AsPath(*cpath));
 }
 
+void sk_canvas_clear(sk_canvas_t* ccanvas, const sk_color_t color) {
+    AsCanvas(ccanvas)->clear(color);
+}
+
 void sk_canvas_draw_paint(sk_canvas_t* ccanvas, const sk_paint_t* cpaint) {
     AsCanvas(ccanvas)->drawPaint(AsPaint(*cpaint));
 }
